@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prism FileMaker Example</title>
+	
+	<!-- PRISM JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js" integrity="sha512-RDQSW3KoqJMiX0L/UBgwBmH1EmRYp8LBOiLaA8rBHIy+7OGP/7Gxg8vbt8wG4ZYd29P0Fnoq6+LOytCqx3cyoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	
+	<!-- PRISM CSS THEME -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-coy.min.css" integrity="sha512-LOT5F67SMZVdXMrvQe4S1ZHu5l6xk3CST2qqno9kY329OsJBBpybnq+fM9qG4ZSaNzPOjoGzHAeBamSSJyyuZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+	<!-- PRISM FILEMAKER JS -->
+	<script src="js/prism-filemaker.js"></script>
+	
+	<!-- MD-BLOCK MARKDOWN RENDERER -->
+	<script type="module" src="https://md-block.verou.me/md-block.js"></script>
+	
+</head>
+<body>
+	<h1>Prism FileMaker Example</h1>
+	
+	<hr>
+
+<md-block>
+		# FileMaker Syntax Examples
+			
+		```filemaker
+		
+			// Comment
+			
+			/*
+				Multi-line comment
+			*/ 
+			
+			true & "¶" & False
+			
+			Let (
+				
+				[
+					thirteen = 13 ;
+					seven = 7
+				] ;
+				
+				( thirteen + seven ) & ¶ &
+				( thirteen > seven )
+				
+			)
+			
+			myTable::ID
+			
+			ValueCount ( myTable::ID )
+			
+			Another Table::First Name
+			
+			Get( HostApplicationVersion )
+			
+			Get ( AccountExtendedPrivileges )
+			
+			JSONDeleteElement ( json ; keyOrIndexOrPath )
+			
+			Base64Decode ( text {; fileNameWithExtension } )
+			
+			// Plug-in Function
+			SMTPit_Register ( "My First Name" ; "My Last Name" ; "My License Key" )
+			SMTPit_Send( False ; True )
+
+		```
+		----
+		
+		```fm
+		Base64EncodeRFC ( 3548 ;
+			Upper ( 
+				List (
+					invoice items::customerID;
+					invoice items::name_first;
+					invoice items::name_second;
+					invoice items::product;
+					invoice items::users;
+					invoice items::license_type
+				)
+			)
+		)
+		```
+		
+	</md-block>
+</body>
+</html>
