@@ -33,11 +33,6 @@ Prism.languages.filemaker = {
 	'function': [
 		{
 			pattern: /\b\w+ ?(?=\()/
-		},
-		
-		// PLUG-INS WITH NO PARAMS.
-		{
-			pattern: /(CNSBC_|CNSImage_|CNSMenu_|CNSQuery_|FTPit_|POP3it_|SMTPit_)[a-zA-Z]*?\b/
 		}
 	],
 	
@@ -46,9 +41,11 @@ Prism.languages.filemaker = {
 		
 		// GET
 		{
-			pattern: /\b(?:AccountExtendedPrivileges|AccountGroupName|AccountName|AccountPrivilegeSetName|AccountType|ActiveFieldContents|ActiveFieldName|ActiveFieldTableName|ActiveLayoutObjectName|ActiveModifierKeys|ActivePortalRowNumber|ActiveRecordNumber|ActiveRepetitionNumber|ActiveSelectionSize|ActiveSelectionStart|AllowAbortState|AllowFormattingBarState|ApplicationArchitecture|ApplicationLanguage|ApplicationVersion|CalculationRepetitionNumber|ConnectionAttributes|ConnectionState|CurrentDate|CurrentExtendedPrivileges|CurrentHostTimestamp|CurrentPrivilegeSetName|CurrentTime|CurrentTimestamp|CurrentTimeUTCMilliseconds|CustomMenuSetName|DesktopPath|Device|DocumentsPath|DocumentsPathListing|EncryptionState|ErrorCaptureState|FileLocaleElements|FileMakerPath|FileName|FilePath|FileSize|FoundCount|HighContrastState|HostApplicationVersion|HostIPAddress|HostName|InstalledFMPlugins|InstalledFMPluginsAsJSON|LastError|LastExternalErrorDetail|LastMessageChoice|LayoutAccess|LayoutCount|LayoutName|LayoutNumber|LayoutTableName|LayoutViewState|MenubarState|ModifiedFields|MultiUserState|NetworkProtocol|NetworkType|OpenDataFileInfo|PageCount|PageNumber|PersistentID|PreferencesPath|PrinterName|QuickFindText|RecordAccess|RecordID|RecordModificationCount|RecordNumber|RecordOpenCount|RecordOpenState|RegionMonitorEvents|RequestCount|RequestOmitState|ScreenDepth|ScreenHeight|ScreenScaleFactor|ScreenWidth|ScriptAnimationState|ScriptName|ScriptParameter|ScriptResult|SortState|StatusAreaState|SystemAppearance|SystemDrive|SystemIPAddress|SystemLanguage|SystemLocaleElements|SystemNICAddress|SystemPlatform|SystemVersion|TemporaryPath|TextRulerVisible|TotalRecordCount|TouchKeyboardState|TriggerCurrentPanel|TriggerExternalEvent|TriggerGestureInfo|TriggerKeystroke|TriggerModifierKeys|TriggerTargetPanel|UserCount|UserName|UseSystemFormatsState|UUID|UUIDNumber|WindowContentHeight|WindowContentWidth|WindowDesktopHeight|WindowDesktopWidth|WindowHeight|WindowLeft|WindowMode|WindowName|WindowOrientation|WindowStyle|WindowTop|WindowVisible|WindowWidth|WindowZoomLevel)\b/
+			pattern: /(Get ?\() ?[a-zA-Z]* ?(?=\))/i,
+			lookbehind: true,
+			greedy: true
 		},
-		
+
 		// JSON
 		{
 			pattern: /\b(?:JSONString|JSONNumber|JSONBoolean)\b/
@@ -56,13 +53,12 @@ Prism.languages.filemaker = {
 		
 		// FIELD NAMES
 		{
-			pattern: /\b[a-zA-Z0-9_ ]*?::[a-zA-Z_][a-zA-Z0-9_]*?\b/,
-			greedy: true
+			pattern: /\b[a-zA-Z0-9_ ]+::[a-zA-Z0-9_ ]+/
 		}
 	],
 	
 	// BOOLEAN
-	'boolean': /\b(?:[fF]alse|[Tt]rue)\b/,
+	'boolean': /\b(?:False|True)\b/i,
 	
 	// NUMBERS
 	'number': /\b0x[\da-f]+\b|(?:\b\d+(?:\.\d*)?|\B\.\d+)(?:e[+-]?\d+)?/i,
