@@ -41,7 +41,7 @@ Prism.languages.filemaker = {
 		
 		// GET
 		{
-			pattern: /(Get ?\() ?[a-zA-Z]* ?(?=\))/i,
+			pattern: /(Get ?\() ?[a-z]* ?(?=\))/i,
 			lookbehind: true,
 			greedy: true
 		},
@@ -53,12 +53,22 @@ Prism.languages.filemaker = {
 		
 		// FIELD NAMES
 		{
-			pattern: /\b[a-zA-Z0-9_ ]+::[a-zA-Z0-9_ ]+/
+			pattern: /[a-z0-9_ »\@]+::[a-z0-9_ »]+/i
 		}
 	],
 	
 	// BOOLEAN
 	'boolean': /\b(?:False|True)\b/i,
+	
+	// VARIABLES
+	'variable': [
+		
+		// $LOCAL, $$GLOBAL, local non-prefixed
+		{
+			pattern: /\${0,2}[a-z_~.]+/i
+		}
+
+	],
 	
 	// NUMBERS
 	'number': /\b0x[\da-f]+\b|(?:\b\d+(?:\.\d*)?|\B\.\d+)(?:e[+-]?\d+)?/i,
