@@ -38,3 +38,4 @@ Load the `index.html` page in your browser to see an example of prism-filemaker 
 ## Known Issues
 
 * There are likely constants that are not highlighted properly.
+* Pilcrows are not rendered correctly.
