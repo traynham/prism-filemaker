@@ -11,7 +11,7 @@ View the [Prism website](https://prismjs.com) to learn how to install the syntax
 After you have loaded prism.js, load prism-filemaker.js. Use the `defer` attribute in your script tag to defer running the script until the dom is ready. Be sure to add defer to other scripts for proper loading. Using defer allows you to place the script tag in the head portion of your html.
 
 ```html
-&lt;script defer src="js/prism-filemaker.js"&gt;&lt;/script&gt;
+<script defer src="js/prism-filemaker.js"></script>;
 ```
 
 ## Example
