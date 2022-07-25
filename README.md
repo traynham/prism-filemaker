@@ -11,7 +11,9 @@ View the [Prism website](https://prismjs.com) to learn how to install the syntax
 After you have loaded prism.js, load prism-filemaker.js. Use the `defer` attribute in your script tag to defer running the script until the dom is ready. Be sure to add defer to other scripts for proper loading. Using defer allows you to place the script tag in the head portion of your html.
 
 ```html
-<script defer src="js/prism-filemaker.js"></script>;
+<script defer src="js/prism-filemaker.min.js"></script>
+// OR
+<script defer src="js/prism-fm.min.js"></script>
 ```
 
 ## Example
@@ -28,6 +30,22 @@ The head of your html document should look something like the following code:
 
 <!-- PRISM FILEMAKER JS -->
 <script defer src="js/prism-filemaker.js"></script>
+
+```
+
+To highlight your FileMaker code, use code fencing:
+
+```md
+
+	```fm
+		Get ( CurrentHostTimestamp )
+	```
+	
+	// OR
+	
+	```filemaker
+		Get ( CurrentHostTimestamp )
+	```
 
 ```
 
