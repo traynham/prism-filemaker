@@ -41,7 +41,7 @@ To highlight your FileMaker code, use code fencing:
 		Get ( CurrentHostTimestamp )
 	```
 	
-	// OR
+	OR
 	
 	```filemaker
 		Get ( CurrentHostTimestamp )
