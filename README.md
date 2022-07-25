@@ -34,3 +34,7 @@ The head of your html document should look something like the following code:
 ## Demo
 
 Load the `index.html` page in your browser to see an example of prism-filemaker highlighting several bits of FileMaker calculations. This demo html file uses [md-block](https://md-block.verou.me) to render markdown as html using a web component when the page is loaded.
+
+## Known Issues
+
+* There are likely constants that are not highlighted properly.
